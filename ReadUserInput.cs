@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace GameDataParser
 {
-    internal class ReadUserInput
+    public class ReadUserInput
     {
+        public ReadUserInput()
+        {
+            
+        }
     }
 }
