@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GameDataParser
+namespace GameDataParser.ReadUserInput 
 {
     public class ReadUserInput
     {
@@ -18,20 +18,17 @@ namespace GameDataParser
 
         public void EnterFileName()
         {
-
             Console.WriteLine("Enter the name of the file you want to read: ");
-            FileName = Console.ReadLine();
+            var input = Console.ReadLine();
+            FileName = input ?? string.Empty;
             FileExt = Path.GetExtension(FileName);
-            if (FileExt != ".json")
+            while (FileExt != ".json")
             {
                 Console.WriteLine("Please enter a valid file name:");
-                FileName = Console.ReadLine();
+                input = Console.ReadLine();
+                FileName = input ?? string.Empty;
+                FileExt = Path.GetExtension(FileName);
             }
-            else
-            {
-
-            }
-
         }
     }
 }
