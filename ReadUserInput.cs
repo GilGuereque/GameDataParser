@@ -19,10 +19,19 @@ namespace GameDataParser
         public void EnterFileName()
         {
 
-            while (FileExt != ".json") ;
             Console.WriteLine("Enter the name of the file you want to read: ");
             FileName = Console.ReadLine();
             FileExt = Path.GetExtension(FileName);
+            if (FileExt != ".json")
+            {
+                Console.WriteLine("Please enter a valid file name:");
+                FileName = Console.ReadLine();
+            }
+            else
+            {
+
+            }
+
         }
     }
 }
