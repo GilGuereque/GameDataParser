@@ -8,6 +8,7 @@ ReadUserInput userInput = new ReadUserInput();
 userInput.EnterFileName();
 
 // TODO: Implement file reading and JSON parsing logic
+// TODO: Need to implement error handling for file reading and JSON parsing
 
 
 Console.ReadKey();
