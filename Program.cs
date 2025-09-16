@@ -7,4 +7,7 @@ Console.WriteLine("Afterwards, it will print out the json from the file that was
 ReadUserInput userInput = new ReadUserInput();
 userInput.EnterFileName();
 
+// TODO: Implement file reading and JSON parsing logic
+
+
 Console.ReadKey();
