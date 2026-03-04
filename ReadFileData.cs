@@ -26,6 +26,19 @@ namespace GameDataParser.ReadFileData
             {
                 throw new InvalidOperationException("Failed to deserialize video games from file.");
             }
+            else if (videoGames.Count > 0)
+            {
+                Console.WriteLine();
+                Console.WriteLine("Loadedgames are:");
+                foreach(var videoGame in videoGames)
+                {
+                    Console.WriteLine(videoGames);
+                }
+            }
+            else
+            {
+                Console.WriteLine("No games are present in the input file.");
+            }
 
         }
 
@@ -36,5 +49,8 @@ namespace GameDataParser.ReadFileData
         public string Title { get; init; }
         public int ReleaseYear { get; init; }
         public decimal Rating { get; init; }
+
+        public override string ToString() =>
+            $"{Title}, released in {ReleaseYear}, rating: {Rating}";
     }
 }
