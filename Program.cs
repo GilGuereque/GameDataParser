@@ -1,7 +1,7 @@
 ﻿using GameDataParser.ReadUserInput;
 
-Console.WriteLine("This will be a Game Data Parser project. It will take in a file by you inputting its name and then parse the data.");
-Console.WriteLine("Afterwards, it will print out the json from the file that was read.");
+Console.WriteLine("This project will be a Game Data parser. It will take in the file that you input and then parse the data within.");
+Console.WriteLine("Afterwards, it will print out the json data from the file that was read.");
 
 // Create an instance of ReadUserInput to call the non-static method
 ReadUserInput userInput = new ReadUserInput();
