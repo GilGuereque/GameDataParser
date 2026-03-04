@@ -4,8 +4,8 @@ Console.WriteLine("This project will be a Game Data parser. It will take in the 
 Console.WriteLine("Afterwards, it will print out the json data from the file that was read.");
 
 // Create an instance of ReadUserInput to call the non-static method
-ReadUserInput userInput = new ReadUserInput();
-userInput.EnterFileName();
+FileNameReader userInput = new FileNameReader();
+userInput.PromptForFileName();
 
 // TODO: Implement file reading and JSON parsing logic
 // TODO: Need to implement error handling for file reading and JSON parsing

@@ -1,16 +1,16 @@
 ﻿namespace GameDataParser.ReadUserInput
 {
-    public class ReadUserInput
+    public class FileNameReader
     {
         public string FileName { get; private set; }
         public string FileExt => Path.GetExtension(FileName);
 
-        public ReadUserInput()
+        public FileNameReader()
         {
             FileName = string.Empty;
         }
 
-        public void EnterFileName()
+        public void PromptForFileName()
         {
             do
             {
