@@ -9,4 +9,9 @@ namespace GameDataParser
     internal class PrintData
     {
     }
+
+    // Class object structure
+    // string title
+    // int release year
+    // decimal rating
 }
