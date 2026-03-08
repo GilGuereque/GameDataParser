@@ -22,8 +22,6 @@
                     Console.WriteLine("Invalid file extension. Please enter a valid .json file name.");
                 }
             } while (FileExt != ".json");
-
-            // TODO: Log exceptions ?
         }
     }
 }
