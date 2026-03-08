@@ -13,5 +13,4 @@ userInput.PromptForFileName();
 // TODO: Will need to print the parsed JSON data to the console in a readable format and to a file possibly
 
 Console.ReadKey();
-
-// End of Program.cs (testing remote commit history).
+// End of program
