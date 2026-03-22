@@ -24,12 +24,12 @@ namespace GameDataParser.ReadFileData
             List<VideoGame>? videoGames = JsonSerializer.Deserialize<List<VideoGame>>(fileContents);
             if (videoGames == null)
             {
-                throw new InvalidOperationException("Failed to deserialize video games from file.");
+                throw new InvalidOperationException("Failed to deserialize video games from file. File must not be null");
             }
             else if (videoGames.Count > 0)
             {
                 Console.WriteLine();
-                Console.WriteLine("Loadedgames are:");
+                Console.WriteLine("Loaded games are:");
                 foreach(var videoGame in videoGames)
                 {
                     Console.WriteLine(videoGames);
