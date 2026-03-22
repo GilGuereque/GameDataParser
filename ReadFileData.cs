@@ -21,7 +21,24 @@ namespace GameDataParser.ReadFileData
 
             string fileContents = File.ReadAllText(fileName);
 
-            List<VideoGame>? videoGames = JsonSerializer.Deserialize<List<VideoGame>>(fileContents);
+            List<VideoGame> videoGames = default;
+            try
+            {
+                videoGames = JsonSerializer.Deserialize<List<VideoGame>>(fileContents);
+            }
+            catch(JsonException ex)
+            {
+                var originalColor = Console.ForegroundColor;
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine($"JSON in {fileName} file was not " +
+                    $"in a valid format. JSON body:");
+                Console.WriteLine(fileContents);
+                Console.ForegroundColor = originalColor;
+
+                throw new JsonException($"{ex.Message} The file is: {fileName}", ex);
+            }
+                
+
             if (videoGames == null)
             {
                 throw new InvalidOperationException("Failed to deserialize video games from file. File must not be null");
