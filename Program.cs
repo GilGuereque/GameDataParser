@@ -1,6 +1,7 @@
 ﻿using GameDataParser.ReadUserInput;
 
 var app = new GameDataParserApp();
+var logger = new Logger("log.txt");
 
 try
 {
@@ -10,8 +11,8 @@ catch(Exception ex)
 {
     Console.WriteLine(
         "Sorry! The application has experience an unexpected error " +
-        "and will have to be closed." +
-        $"{ex.Message}");
+        "and will have to be closed.");
+        logger.Log(ex);
 }
 
 Console.WriteLine("Press any key to close the app.");
