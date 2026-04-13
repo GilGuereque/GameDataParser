@@ -7,7 +7,7 @@ try
 {
     app.Run();
 }
-catch(Exception ex)
+catch (Exception ex)
 {
     Console.WriteLine(
         "Sorry! The application has experienced an unexpected error " +
@@ -27,26 +27,27 @@ public class GameDataParserApp
         var fileName = default(string);
         do
         {
-            try
-            {
-                Console.WriteLine("Enter the name of the file you want to read:");
-                fileName = Console.ReadLine();
+            Console.WriteLine("Enter the name of the file you want to read:");
+            fileName = Console.ReadLine();
 
-                fileContents = File.ReadAllText(fileName);
-                isFileRead = true;
-            }
-            catch (ArgumentNullException ex)
+            if (fileName is null)
             {
                 Console.WriteLine("The file name cannot be null.");
             }
-            catch (ArgumentException ex)
+            else if (fileName == string.Empty)
             {
                 Console.WriteLine("The file name cannot be empty.");
             }
-            catch (FileNotFoundException ex)
+            else if (!File.Exists(fileName))
             {
                 Console.WriteLine("The file does not exist.");
             }
+            else
+            {
+                fileContents = File.ReadAllText(fileName);
+                isFileRead = true;
+            }
+
         }
         while (!isFileRead);
 
